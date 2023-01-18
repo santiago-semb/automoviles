@@ -1,0 +1,47 @@
+<div class="container">
+
+    <form class="form-control" id="buscador" (ngSubmit)="buscador(patenteABuscar.value)">
+        <label>Patente</label>
+        <input type="text" name="busqueda" [(ngModel)]="patente" #patenteABuscar style="text-transform: uppercase;" autocomplete="off">
+        <button class="boton-buscar">Buscar</button>
+    </form>
+
+    <table class="table table-striped" style="margin-top: 10px;">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Patente</th>
+            <th scope="col">Marca</th>
+            <th scope="col">Modelo</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let auto of automoviles | paginate: { itemsPerPage: 20, currentPage: page };let i=index;">
+            <th scope="row">{{i+1}}</th>
+            <td><a routerLink="/ver-automovil/{{auto.id}}" style="text-decoration: none; text-transform: uppercase;">{{auto.patente}}</a></td>
+            <td>
+                <span *ngFor="let marca of marcas;let i=index;">
+                    <img *ngIf="auto.marca == marca.nombre" id="logotipo" src="{{marca.img}}">
+                </span>
+            </td>
+            <td><span style="text-transform: capitalize;">{{auto.modelo}}</span></td>
+            <td style="text-align: right;"><button routerLink="/editar-automovil/{{auto.id}}" class="btn btn-dark" id="boton-editar">Editar</button></td>
+            <td><button (click)="eliminarAuto(auto.id)" class="btn btn-dark" id="boton-eliminar">Eliminar</button></td>
+        </tr>
+        </tbody>
+    </table>
+  
+</div>
+<div class="container-fluid">
+    <div class="row" id="sub-nav">
+        <div class="col" id="subnav-col"><button (click)="redireccionCrearAuto()" class="btn btn-success">Crear</button></div>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div id="barra-next" class="form-control">
+        <pagination-controls (pageChange)="page = $event" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
+    </div>
+</div>

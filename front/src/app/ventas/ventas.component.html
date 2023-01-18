@@ -1,0 +1,24 @@
+<div class="container">
+    <table class="table">
+        <thead class="thead-dark" id="theadtabla">
+          <tr>
+            <th scope="col">IdVenta</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Asunto</th>
+            <th scope="col">Comprador</th>
+            <th scope="col">Monto</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let venta of ventas;let i=index;">
+            <td>{{venta.id}}</td>
+            <td>{{venta.fecha}}</td>
+            <td><a routerLink="/ver-venta/{{venta.id}}" id="a-asunto">{{venta.asunto}}</a></td>
+            <td>{{venta.nombreComprador}} {{venta.apellidoComprador}}</td>
+            <td>{{venta.monto}}<b>USD</b></td>
+            <td><button (click)="eliminarVenta(venta.id)" class="btn btn-danger">X</button></td>
+          </tr>
+        </tbody>
+      </table>
+</div>

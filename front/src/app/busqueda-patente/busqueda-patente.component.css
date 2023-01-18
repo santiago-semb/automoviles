@@ -1,0 +1,14 @@
+#logotipo {
+    width: 45px;
+    height: 45px;
+}
+
+#boton-eliminar:hover {
+    border: 1px solid #d41b28;
+    background-color: #d41b28;
+}
+
+#boton-editar:hover {
+    border: 1px solid #b6a717;
+    background-color: #b6a717;
+}

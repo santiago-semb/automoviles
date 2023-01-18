@@ -1,0 +1,64 @@
+<div class="container-fluid" *ngIf="!autenticado">
+    <form class="formulario">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Nombre</label>
+          <input type="email" class="form-control" #name>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Apellido</label>
+          <input type="text" class="form-control" #surname>
+        </div>
+        <div class="form-group">
+            <label>DNI</label>
+            <input type="number" class="form-control" #dni>
+        </div>
+        <button type="submit" (click)="enviarForm(name.value,surname.value,dni.value)" class="btn btn-dark">Enviar</button>
+    </form>
+</div>
+
+<!-- CONTENIDO SI SE AUTENTICO -->
+<div class="container-fluid" *ngIf="autenticado">
+    <div class="row" id="sub-nav">
+        <div class="col"><button class="btn btn-light" id="boton-user" (click)="recuperarInfoUsuario()"><i class="fa-solid fa-user"></i></button></div>
+        <div class="col-3" *ngIf="userAuth">
+            <span id="span-data">{{userName}},</span>
+            <span id="span-data">{{userSurname}}</span>
+            <span id="span-data" style="color: rgb(20, 17, 17);">{{documentoNacionalIdentidad}}</span>
+            <span id="span-data-delete"><button (click)="vaciarAlmacenamientoLocal()" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button></span>
+        </div>
+        <div class="col-8" id="subnav-col"><button (click)="redireccionCrearPublicacion()" class="btn btn-success">Añadir</button></div>
+    </div>
+    <div *ngIf="publicaciones.length == 0" style="text-align: center; margin-top: 50px;">
+        <i class="fa-solid fa-triangle-exclamation" style="font-size: 150px;"></i>
+        <h1 class="h1-nopubli">Aun no hay publicaciones</h1>
+    </div>
+    <div class="marco" *ngFor="let publi of publicaciones | paginate: { itemsPerPage: 5, currentPage: page };let i=index;">
+        <h2>
+            <b>{{publi.precio}}USD</b><span style="color: gray;"> {{publi.automovil}}</span>
+            <button id="boton-success" class="btn btn-dark" (click)="info()"><i style="font-size: 15px;" class="fa-solid fa-circle-info"></i></button>
+            <button id="boton-success" class="btn btn-dark" (click)="tecnico()"><i class="fa-solid fa-screwdriver-wrench"></i></button>
+            <button id="boton-success" class="btn btn-dark" (click)="contacto()"><i class="fa-solid fa-address-book"></i></button>
+            <button class="btn btn-danger" id="boton-eliminar" (click)="eliminarPublicacion(publi.id)">X</button>
+        </h2><button class="btn btn-secondary" (click)="crearVenta(publi.automovil,publi.precio,nombreComprador,apellidoComprador,dniComprador,publi.telefono,publi.email)"><i class="fa-solid fa-cart-shopping"></i></button>
+        <span *ngFor="let model of modelos;let i=index;">
+            <img *ngIf="publi.automovil == model.nombre" src="{{model.img}}" id="imagen-publicacion">
+        </span>
+        <span id="descripcion" *ngIf="botonInfo"><p id="description">{{publi.descripcion}}</p></span>
+        <span id="descripcion" *ngIf="botonTecnico">
+            <p class="d-i">Motor</p> <p class="d-a">{{publi.motor}}</p><br/>
+            <p class="d-i" id="d-i-kilometros">Kilometros </p> <p class="d-a">{{publi.kilometros}}km</p><br/>
+            <p class="d-i">Modelo</p> <p class="d-a">{{publi.modelo}}</p><br/>
+            <p class="d-i">Color</p> <p class="d-a" id="d-a-color">{{publi.color}}</p>
+        </span>
+        <span id="descripcion" *ngIf="botonContacto">
+            <b class="d-c">Telefono</b> <span class="c-a">{{publi.telefono}}</span><br/>
+            <b class="d-c">Email</b> <span class="c-a">{{publi.email}}</span><br/>
+            <b class="form-control" id="d-o">Otros medios</b>
+            <span id="d-a">{{publi.masInfoDeContacto}}</span>
+        </span>
+    </div>
+
+    <div id="barra-next" class="form-control">
+        <pagination-controls (pageChange)="page = $event" previousLabel="Anterior" nextLabel="Siguiente"></pagination-controls>
+    </div>
+</div>

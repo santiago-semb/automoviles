@@ -1,0 +1,39 @@
+<div class="container">
+
+    <form class="form-control" id="formulario" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label>Automovil</label>
+          <select [(ngModel)]="automovil" name="automovil" class="form-control" style="width: 30%;margin: 0 auto;">
+            <option>Selecciona el automovil</option>
+            <option *ngFor="let model of modelos" id="option-model">{{model.nombre}}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Precio</label>
+          <input type="number" #price [(ngModel)]="precio" name="precio" class="form-control" placeholder="$USD">
+        </div>
+        <div class="form-group">
+          <label>Color</label>
+          <input type="text" #colorAuto [(ngModel)]="color" name="colorAuto" class="form-control" placeholder="Color" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label>Descripcion</label>
+          <textarea [(ngModel)]="descripcion" name="descripcion" class="form-control" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+          <label>Detalles Tecnicos</label>
+          <input type="text" [(ngModel)]="motor" name="motor" class="form-control" placeholder="Motor" style="margin-bottom: 2px;" autocomplete="off">
+          <input type="number" [(ngModel)]="kilometros" name="kilometros" class="form-control" placeholder="Kilometros" style="margin-bottom: 2px;" autocomplete="off">
+          <input type="text" [(ngModel)]="modelo" name="modelo" class="form-control" placeholder="Modelo" autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label>Contacto</label>
+          <input type="text" [(ngModel)]="telefono" name="telefono" class="form-control" placeholder="Telefono" style="margin-bottom: 2px;" autocomplete="off">
+          <input type="email" [(ngModel)]="email" name="email" class="form-control" placeholder="Email" autocomplete="off">
+          <label>Opcional</label>
+          <textarea [(ngModel)]="masInfoDeContacto" name="masInfoDeContacto" style="width: 50%;margin: 0 auto;" class="form-control" rows="2" placeholder="Otros medios de contacto"></textarea>
+        </div>
+        <button type="submit" class="btn btn-secondary" id="boton-añadir">Añadir</button>
+      </form>
+
+</div>

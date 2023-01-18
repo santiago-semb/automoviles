@@ -1,0 +1,18 @@
+<div class="container-fluid" (click)="getModeloByName(asunto)">
+    <h3 id="h3-title"><img class="img-modelo" *ngIf="imgModelo != null" src="{{imgModelo}}"><img class="img-marca" *ngIf="imgMarca != null" src="{{imgMarca}}"> {{asunto}}</h3>
+    <h5 class="fecha">{{fecha}}</h5>
+    <h5 class="monto">{{monto}}<b>USD</b></h5>
+    <h2 class="h2-detalles"><i class="fa-solid fa-circle-info"></i> detalles de la venta</h2>
+    <div class="div-datos">
+        <h3 id="h3-title2">comprador</h3>
+        <p><span id="span-data">nombre</span> <span id="span-asnwer-data">{{nombreComprador}}</span></p>
+        <p><span id="span-data">apellido</span> <span id="span-asnwer-data">{{apellidoComprador}}</span></p>
+        <p><span id="span-data">dni</span> <span id="span-asnwer-data">{{dniComprador}}</span></p>
+        <h3 id="h3-title2">automovil</h3>
+        <p><span id="span-data">marca</span> <span id="span-answer-data"><img style="height: 30px;width: 30px;" src="{{imgMarca}}"> {{marca}}</span></p>
+        <p><span id="span-data">modelo</span> <span id="span-answer-data">{{asunto}}</span></p>
+        <p><span id="span-data">motor</span> <span id="span-answer-data">{{motor}}</span></p>
+        <p><span id="span-data">kilometros</span> <span id="span-answer-data">{{kilometros}}KM</span></p>
+        <p><span id="span-data">color</span> <span id="span-answer-data">{{color}}</span></p>
+    </div>
+</div>

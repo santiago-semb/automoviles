@@ -1,0 +1,27 @@
+#nav-row {
+    border-bottom:5px double black;
+    height: 50px;
+    line-height: 45px;
+    text-align: center;
+    background: #272f2f
+}
+
+#navs {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: whitesmoke;
+    transition: 300ms all;
+}
+
+#navs:hover{
+    color: gray;
+}
+
+#nav-col {
+    transition: 300ms all;
+}
+
+#nav-col:hover{
+    background-color: #111316;
+    border-radius: 1em;
+}

@@ -1,0 +1,35 @@
+<div class="container">
+    <table class="table table-striped" style="margin-top: 10px;">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Patente</th>
+            <th scope="col">Marca</th>
+            <th scope="col">Modelo</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th></th>
+            <td><a routerLink="/ver-automovil/{{auto.id}}" style="text-decoration: none; text-transform: uppercase;">{{auto.patente}}</a></td>
+            <td>
+                <span style="text-transform: capitalize;" *ngIf="auto.marca == 'renault'"><img id="logotipo" src="{{imgMarcaRenault}}"></span>
+                <span style="text-transform: capitalize;" *ngIf="auto.marca == 'ford'"><img id="logotipo" src="{{imgMarcaFord}}"></span>
+                <span style="text-transform: capitalize;" *ngIf="auto.marca == 'fiat'"><img id="logotipo" src="{{imgMarcaFiat}}"></span>
+                <span style="text-transform: capitalize;" *ngIf="auto.marca == 'ram'"><img id="logotipo" src="{{imgMarcaRam}}"></span>
+                <span style="text-transform: capitalize;" *ngIf="auto.marca == 'peugeot'"><img id="logotipo" src="{{imgMarcaPeugeot}}"></span>
+                <span style="text-transform: capitalize;" *ngIf="auto.marca == 'volkswagen'"><img id="logotipo" src="{{imgMarcaVolkswagen}}"></span>
+                <span style="text-transform: capitalize;" *ngIf="auto.marca == 'chevrolet'"><img id="logotipo" src="{{imgMarcaChevrolet}}"></span>
+                <span style="text-transform: capitalize;" *ngIf="auto.marca == 'nissan'"><img id="logotipo" src="{{imgMarcaNissan}}"></span>
+                <span style="text-transform: capitalize;" *ngIf="auto.marca == 'toyota'"><img id="logotipo" src="{{imgMarcaToyota}}"></span>
+
+            </td>
+            <td><span style="text-transform: capitalize;">{{auto.modelo}}</span></td>
+            <td style="text-align: right;"><button routerLink="/editar-automovil/{{auto.id}}" class="btn btn-dark" id="boton-editar">Editar</button></td>
+            <td><button (click)="eliminarAuto(auto.id)" class="btn btn-dark" id="boton-eliminar">Eliminar</button></td>
+        </tr>
+        </tbody>
+    </table>
+</div>

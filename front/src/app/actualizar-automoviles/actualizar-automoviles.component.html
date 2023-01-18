@@ -1,0 +1,46 @@
+<div class="container-fluid">
+    <form class="form-control" id="formulario" novalidate>
+        <div class="row">
+        <div class="col">
+            <input type="text" #patenteAct [(ngModel)]="patenteAutoAct" name="patenteAuto" class="form-control" placeholder="{{patenteAct}}">
+        </div>
+        <div class="col">
+            <input type="text" #marcaAct [(ngModel)]="marcaAutoAct" name="marcaAuto" class="form-control" placeholder="Marca" disabled="">
+        </div>
+        <div class="col">
+            <select #modeloAct [(ngModel)]="modeloAutoAct" name="modeloAuto" class="form-control">
+                <option>Selecciona un modelo</option>
+                <option *ngFor="let model of modelos">{{model.nombre}}</option>
+            </select>
+        </div>
+        <div class="col">
+            <input type="number" #precioAct [(ngModel)]="precioAutoAct" name="precioAuto" class="form-control" placeholder="Precio">
+        </div>
+        <div class="col">
+            <input type="text" #colorAct [(ngModel)]="colorAutoAct" name="colorAuto" class="form-control" placeholder="Color">
+        </div>
+        </div>
+    </form>
+    <form  id="formulario" (ngSubmit)="actualizar(patenteAct.value,marcaAct.value,modeloAct.value,precioAct.value,colorAct.value)">
+        <div class="row" class="form-control">
+        <div class="col" id="inputsoff">
+            <input type="text" class="form-control" value="{{patenteAct.value}}" disabled style="text-transform: uppercase;">
+        </div>
+        <div class="col" id="inputsoff">
+            <input type="text" class="form-control" value="{{marcaAct.value}}" disabled style="text-transform: capitalize">
+        </div>
+        <div class="col" id="inputsoff">
+            <input type="text" class="form-control" value="{{modeloAct.value}}" disabled style="text-transform: capitalize">
+        </div>
+        <div class="col" id="inputsoff">
+            <input type="text" class="form-control" value="{{precioAct.value}}" disabled style="text-transform: capitalize">
+        </div>
+        <div class="col" id="inputsoff">
+            <input type="text" class="form-control" value="{{colorAct.value}}" disabled style="text-transform: capitalize">
+        </div>
+        </div>
+        <div class="div-button">
+            <button class="btn btn-success" id="boton-enviar">Actualizar</button>
+        </div>
+    </form>
+</div>

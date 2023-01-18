@@ -1,0 +1,56 @@
+#sub-nav {
+    background-color: aliceblue;
+    height: 50px;
+    line-height: 45px;
+    text-align: center;
+}
+
+#boton-eliminar:hover {
+    border: 1px solid #d41b28;
+    background-color: #d41b28;
+}
+
+#boton-editar:hover {
+    border: 1px solid #b6a717;
+    background-color: #b6a717;
+}
+
+#logotipo {
+    width: 45px;
+    height: 45px;
+}
+
+#buscador {
+    text-align: center;
+    margin-top: 5px;
+}
+
+#buscador label {
+    margin-right: 2px;
+}
+
+#buscador input {
+    height: 25px;
+    border-radius: 0.2em;
+    border: 1px solid #ccc;
+    transition: 200ms all;
+}
+
+#buscador input:hover {
+    border: 1px solid gray;
+}
+
+.boton-buscar {
+    background-color:#ccc;
+    border: 1px solid #ccc;
+    border-radius: 0.2em;
+    padding: 5px;
+    margin-left: 5px;
+}
+
+
+#barra-next {
+    text-align: center;
+    padding: 20px;
+    max-width: 100%;
+}

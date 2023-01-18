@@ -1,0 +1,75 @@
+<div class="container">
+
+    <form class="form-control" id="formulario" novalidate>
+        <div class="row">
+          <div class="col">
+            <input type="text" #patente [(ngModel)]="patenteAuto" name="patenteAuto" class="form-control" placeholder="Patente">
+          </div>
+          <div class="col">
+            <select (click)="limpiarArrayModelos()" #marca [(ngModel)]="marcaAuto" name="marcaAuto" class="form-control">
+              <option>Selecciona una marca</option>
+              <option *ngFor="let marca of marcas" style="font-weight: bold;">{{marca.nombre}}</option>
+            </select>
+          </div>
+          <div class="col">
+            <select (click)="getModelos(marca.value)" #modelo [(ngModel)]="modeloAuto" name="modeloAuto" class="form-control">
+              <option>Selecciona un modelo</option>
+              <!--<option *ngFor="let model of modelos">
+                <span *ngIf="marca.value == model.marca">
+                  {{model.nombre}}
+                </span>
+              </option>-->  
+              
+                <option *ngFor="let models of modelos">
+                  <span *ngIf="marca.value == models.marca">
+                    <option>{{models.nombre}}</option>
+                  </span>
+                </option>
+              
+            </select>
+          </div>
+          <div class="col">
+            <input type="text" #precio [(ngModel)]="precioAuto" name="precioAuto" class="form-control" placeholder="Precio">
+          </div>
+          <div class="col">
+            <input type="text" #color [(ngModel)]="colorAuto" name="colorAuto" class="form-control" placeholder="Color">
+          </div>
+        </div>
+    </form>
+
+
+    <form class="form-control" id="formulario" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="col">
+            <input type="text" class="form-control" value="{{patente.value}}" disabled style="text-transform: uppercase;">
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" value="{{marca.value}}" disabled style="text-transform: capitalize">
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" value="{{modelo.value}}" disabled style="text-transform: capitalize">
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" value="{{precio.value}}" disabled style="text-transform: capitalize">
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" value="{{color.value}}" disabled style="text-transform: capitalize">
+          </div>
+        </div>
+        <div class="div-button">
+            <button class="btn btn-dark" id="boton-enviar">Enviar</button>
+        </div>
+    </form>
+
+    <h6>La <b>patente</b> debe contener entre <b>1</b> y <b>10</b> caracteres.</h6>
+    <hr>
+    <h6>La <b>marca</b> debe contener entre <b>1</b> y <b>50</b> caracteres.</h6>
+    <hr>
+    <h6>El <b>modelo</b> debe contener entre <b>1</b> y <b>35</b> caracteres.</h6>
+    <hr>
+    <h6>El <b>precio</b> debe ser mayor a <b>1</b>.</h6>
+    <hr>
+    <h6>El <b>color</b> debe contener entre <b>1</b> y <b>35</b> caracteres.</h6>
+    <hr>
+
+</div>

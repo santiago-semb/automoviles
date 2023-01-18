@@ -1,0 +1,19 @@
+#formulario {
+    margin-top: 5px;
+    text-align: center;
+}
+
+#formulario input {
+    width: 30%;
+    margin: 0 auto;
+}
+
+#boton-añadir {
+    margin-top: 5px;
+}
+
+#option-model {
+    font-weight: bold;
+    color: black;
+    font-family: sans-serif
+}

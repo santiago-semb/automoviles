@@ -1,0 +1,133 @@
+#sub-nav {
+    background-color: aliceblue;
+    height: 50px;
+    line-height: 45px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.marco {
+    border: 1px solid #ccc;
+    border-radius: 0.2em;
+    width: 90%;
+    margin: 0 auto;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+#imagen-publicacion {
+    width: 60%;
+    height: 400px;
+    display: inline-flex;
+}
+
+#descripcion {
+    width: 30%;
+    max-width: 40%;
+    padding: 5px;
+    position: absolute;
+}
+
+#barra-next {
+    text-align: center;
+    padding: 20px;
+    max-width: 100%;
+}
+
+#boton-eliminar {
+    float: right;
+}
+#boton-success{
+    margin-left: 15px;
+}
+
+.d-i {
+    width: 20%;
+    border-bottom: 1px solid #ccc;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: bold;
+    color: rgb(86, 88, 88);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-transform: uppercase;
+}
+
+#d-i-kilometros {
+    width: 30%;
+}
+
+.d-a {
+    text-align: center;
+    margin: 0 auto;
+    color:rgb(119, 116, 116);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+#d-a-color {
+    text-transform: capitalize;
+}
+
+.d-c {
+    width: 50%;
+    border: 1px solid #ccc;
+    border-radius: 0.2em;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.c-a {
+    padding-left: 20px;
+    padding-right: 20px;
+    color: rgb(119, 116, 116);
+}
+
+#d-o {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+#d-a {
+    color: rgb(119, 116, 116);
+}
+
+.h1-nopubli {
+    height: 400px;
+    text-transform: uppercase;
+    font-family:sans-serif
+}
+
+#description {
+    border: 1px solid #ccc;
+    border-radius: 0.3em;
+    height: 380px;
+    font-size: 18px;
+    padding: 10px;
+}
+
+.formulario {
+    width: 30%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.formulario div {
+    padding: 10px;
+}
+
+#subnav-col {
+    text-align: right;
+}
+
+#span-data {
+    margin-right: 8px;
+    color: gray;
+    text-transform: uppercase;
+    float: left;
+}
+
+#boton-user {
+    float: left;
+    line-height: 35px;
+}
+  
