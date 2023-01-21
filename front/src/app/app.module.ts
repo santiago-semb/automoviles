@@ -18,6 +18,9 @@ import { FormsModule } from '@angular/forms';
 import { BusquedaPatenteComponent } from './busqueda-patente/busqueda-patente.component';
 import { CrearPublicacionComponent } from './crear-publicacion/crear-publicacion.component';
 import { VerVentaComponent } from './ver-venta/ver-venta.component';
+import { BaseDeDatosComponent } from './base-de-datos/base-de-datos.component';
+import { CrearMarcaComponent } from './crear-marca/crear-marca.component';
+import { CrearModeloComponent } from './crear-modelo/crear-modelo.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import { VerVentaComponent } from './ver-venta/ver-venta.component';
     VerAutomovilesComponent,
     BusquedaPatenteComponent,
     CrearPublicacionComponent,
-    VerVentaComponent
+    VerVentaComponent,
+    BaseDeDatosComponent,
+    CrearMarcaComponent,
+    CrearModeloComponent
   ],
   imports: [
     BrowserModule,

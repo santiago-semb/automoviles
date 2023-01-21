@@ -1,0 +1,20 @@
+#col-button {
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    padding: 20px;
+}
+
+#boton:hover {
+    background-color: rgb(28, 112, 39);
+    border: 1px dotted #ccc;
+    color: white;
+}
+
+#b-marcas-and-models {
+    text-transform: uppercase;
+}
+
+#boton-d {
+    width: 100%;
+    margin-top: 5px;
+}

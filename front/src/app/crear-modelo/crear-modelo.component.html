@@ -1,0 +1,20 @@
+<div class="container-fluid">
+    <form>
+        <div class="form-group">
+            <label for="nombreMarca">Nombre</label>
+            <input class="form-control" #nombre id="inputs" type="text">
+        </div>
+        <div class="form-group">
+            <label for="marca">Marca</label>
+            <select class="form-control" #marca>
+                <option>Selecciona una marca</option>
+                <option *ngFor="let marca of marcas">{{marca.nombre}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="nombreImg">Imagen</label>
+            <input class="form-control" #img id="inputs" type="text">
+        </div>
+        <button class="btn btn-dark" (click)="crearModelo(nombre.value,marca.value,img.value)">Crear</button>
+    </form>
+</div>

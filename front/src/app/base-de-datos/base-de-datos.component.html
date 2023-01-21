@@ -1,0 +1,14 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col" id="col-button"><button id="boton" routerLink="/crear-marca" class="btn btn-dark">Agregar marca</button></div>
+        <div class="col" id="col-button"><button id="boton" routerLink="/crear-modelo" class="btn btn-dark">Agregar modelo</button></div>
+    </div>
+    <div class="row">
+        <div class="col" style="text-align: center;">
+            <button (click)="eliminarMarca(marca.id)" class="btn btn-light" *ngFor="let marca of marcas" id="boton-d"><b id="b-marcas-and-models">{{marca.nombre}}</b><br/></button>
+        </div>
+        <div class="col" style="text-align: center;">
+            <button (click)="eliminarModelo(modelo.id)" class="btn btn-light" *ngFor="let modelo of modelos" id="boton-d"><b id="b-marcas-and-models">{{modelo.nombre}}</b><br/></button>
+        </div>
+    </div>
+</div>
