@@ -40,15 +40,15 @@ export class BaseDeDatosComponent implements OnInit {
   }
 
   eliminarMarca(id:number){
-    confirm("¿Seguro que quieres eliminar esta marca?")
+    confirm("¿Seguro que quieres eliminar esta marca?");
     this.marcaService.eliminarMarca(id).subscribe();
-    window.location.reload();
+    alert("Se ha eliminado la marca correctamente.");
   }
 
   eliminarModelo(id:number){
-    confirm("¿Seguro que quieres eliminar este modelo?")
+    confirm("¿Seguro que quieres eliminar este modelo?");
     this.modeloService.eliminarModelo(id).subscribe();
-    window.location.reload();
+    alert("Se ha eliminado el modelo correctamente.");
   }
 
 }

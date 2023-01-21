@@ -19,7 +19,7 @@ export class CrearModeloComponent implements OnInit {
   ngOnInit(): void {
     this.marcaService.getMarcas().subscribe(data => {
       let todosLasMarcas = [];
-      for(let i=0; i<200; i++){
+      for(let i=0; i<500; i++){
         if(data[i] != undefined)
         todosLasMarcas.push(data[i]);
       }
@@ -31,7 +31,7 @@ export class CrearModeloComponent implements OnInit {
 
   crearModelo(nombre:string,marca:string,img:string){
     let modelo = new Modelo(nombre,marca,img);
-    this.modeloService.crearModelo(modelo);
+    this.modeloService.crearModelo(modelo).subscribe();
     this.router.navigate(['base-de-datos']);
   }
 
