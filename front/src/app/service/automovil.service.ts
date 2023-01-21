@@ -11,7 +11,7 @@ export class AutomovilService {
 
   constructor(private httpClient: HttpClient) { }
 
-  url = "http://localhost:8080/automovil/";
+  url = "https://conse.onrender.com/automovil/";
 
   public getAutomoviles(): Observable<Automovil> {
     return this.httpClient.get<Automovil>(this.url + "traer");

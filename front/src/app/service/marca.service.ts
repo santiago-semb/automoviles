@@ -10,7 +10,7 @@ export class MarcaService {
 
   constructor(private httpClient: HttpClient) { }
 
-  url = "http://localhost:8080/marca/";
+  url = "https://conse.onrender.com/marca/";
 
   public getMarcas(): Observable<Marca> {
     return this.httpClient.get<Marca>(this.url + "traer");

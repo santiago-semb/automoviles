@@ -10,7 +10,7 @@ export class PublicacionService {
 
   constructor(private httpClient: HttpClient) { }
 
-  url = "http://localhost:8080/publicacion/";
+  url = "https://conse.onrender.com/publicacion/";
 
   public getPublicaciones(): Observable<Publicacion> {
     return this.httpClient.get<Publicacion>(this.url + "traer");
