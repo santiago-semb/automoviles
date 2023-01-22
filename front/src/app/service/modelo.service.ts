@@ -10,7 +10,7 @@ export class ModeloService {
 
   constructor(private httpClient: HttpClient) { }
 
-  url = "https://conse.onrender.com/modelo/";
+  url = "https://consesionaria.onrender.com/modelo/";
 
   public getModelos(): Observable<Modelo> {
     return this.httpClient.get<Modelo>(this.url + "traer");

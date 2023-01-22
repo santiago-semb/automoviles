@@ -10,7 +10,7 @@ export class VentaService {
 
   constructor(private httpClient: HttpClient) { }
 
-  url = "https://conse.onrender.com/venta/";
+  url = "https://consesionaria.onrender.com/venta/";
 
   public getVentas(): Observable<Venta> {
     return this.httpClient.get<Venta>(this.url + "traer");
