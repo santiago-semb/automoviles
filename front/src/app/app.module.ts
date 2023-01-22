@@ -21,6 +21,7 @@ import { VerVentaComponent } from './ver-venta/ver-venta.component';
 import { BaseDeDatosComponent } from './base-de-datos/base-de-datos.component';
 import { CrearMarcaComponent } from './crear-marca/crear-marca.component';
 import { CrearModeloComponent } from './crear-modelo/crear-modelo.component';
+import { Error404Component } from './error404/error404.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { CrearModeloComponent } from './crear-modelo/crear-modelo.component';
     VerVentaComponent,
     BaseDeDatosComponent,
     CrearMarcaComponent,
-    CrearModeloComponent
+    CrearModeloComponent,
+    Error404Component
   ],
   imports: [
     BrowserModule,

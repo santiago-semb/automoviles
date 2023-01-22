@@ -8,12 +8,16 @@ import { CrearAutomovilesComponent } from './crear-automoviles/crear-automoviles
 import { CrearMarcaComponent } from './crear-marca/crear-marca.component';
 import { CrearModeloComponent } from './crear-modelo/crear-modelo.component';
 import { CrearPublicacionComponent } from './crear-publicacion/crear-publicacion.component';
+import { Error404Component } from './error404/error404.component';
 import { PublicacionesComponent } from './publicaciones/publicaciones.component';
 import { VentasComponent } from './ventas/ventas.component';
 import { VerAutomovilesComponent } from './ver-automoviles/ver-automoviles.component';
 import { VerVentaComponent } from './ver-venta/ver-venta.component';
 
 const routes: Routes = [
+  // RUTA POR DEFECTO
+  {path:'', redirectTo: 'automoviles',pathMatch:'full'},
+  // RESTO DE RUTAS
   {path:'automoviles', component: AutomovilesComponent},
   {path:'publicaciones', component: PublicacionesComponent},
   {path:'ventas', component: VentasComponent},
@@ -25,7 +29,9 @@ const routes: Routes = [
   {path:'ver-venta/:id', component: VerVentaComponent},
   {path:'base-de-datos', component: BaseDeDatosComponent},
   {path:'crear-marca', component: CrearMarcaComponent},
-  {path:'crear-modelo', component: CrearModeloComponent}
+  {path:'crear-modelo', component: CrearModeloComponent},
+  // RUTA ERROR 404
+  {path: '**', component: Error404Component}
 ];
 
 @NgModule({

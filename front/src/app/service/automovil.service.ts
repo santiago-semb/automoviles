@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Automovil } from '../model/automovil.model';
 import { Observable } from 'rxjs';
-import { AUTO_STYLE } from '@angular/animations';
 
 @Injectable({
   providedIn: 'root'
